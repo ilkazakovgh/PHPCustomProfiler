@@ -46,7 +46,7 @@ class Profiler implements IProfiler
         }
     }
 
-    private function getChildrenDurations(string $timerNameUnique)
+    private function getChildrenDurations(string $timerNameUnique) : float
     {
         $result = 0;
         array_walk($this->timers, function ($item) use ($timerNameUnique, &$result) {
@@ -57,7 +57,7 @@ class Profiler implements IProfiler
         return $result;
     }
 
-    public function getTimers(): array
+    public function getTimers() : array
     {
         $result = [];
 
